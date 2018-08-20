@@ -1,0 +1,28 @@
+{
+  "exp": {
+    "name": "fashion_mnist_nasnet_from_config"
+  },
+  "data_loader": {
+    "name": "fashion_mnist_data_loader.ConvFashionMnistDataLoader"
+  },
+  "model":{
+    "name": "fashion_mnist_model.NasNetModel",
+    "learning_rate": 0.001,
+    "optimizer": "sgd"
+  },
+  "trainer":{
+    "name": "fashion_mnist_trainer.FashionMnistModelTrainer",
+    "num_epochs": 100,
+    "batch_size": 32,
+    "validation_split": 0.1,
+    "verbose_training": true
+  },
+  "callbacks":{
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "checkpoint_save_best_only": true,
+   "checkpoint_save_weights_only": true,
+    "checkpoint_verbose": true,
+    "tensorboard_write_graph": true
+  }
+}
